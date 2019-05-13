@@ -1,0 +1,12 @@
+<div style="text-align:center">
+  <h1>Welcome to {{ title }}!</h1>
+</div>
+
+<button type="button" class="btn increment-date" (click)="increamentDate()">+</button>
+<input type="date" class="input-date" [value]="dateString | date:'yyyy-MM-dd'"
+  (input)="dateString=parseDate($event.target.value)" />
+
+<button type="button" class="btn decrement-date" (click)="decreamentDate()">-</button>
+
+
+<p class="output-date">{{ dateString | formatDate:'ddd, Do MMM YYYY' }}</p>
